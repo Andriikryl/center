@@ -12,6 +12,8 @@ export default function CheckProperty({
   setInitialValue,
   label,
 }: InputCheckProps) {
+  const id = React.useId();
+  const inputCheckId = `${id}-username`;
   return (
     <div>
       <form
@@ -23,13 +25,15 @@ export default function CheckProperty({
         <input
           className={styles.input}
           type="checkbox"
-          id="opt-in-checkbox"
+          id={inputCheckId}
           checked={initialValue}
           onChange={(event) => {
             setInitialValue(event.target.checked);
           }}
         />
-        <label className={styles.label}>{label}</label>
+        <label htmlFor={inputCheckId} className={styles.label}>
+          {label}
+        </label>
       </form>
     </div>
   );
