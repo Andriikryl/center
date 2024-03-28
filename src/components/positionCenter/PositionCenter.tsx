@@ -1,11 +1,15 @@
 "use client";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Container from "../container/Container";
 import styles from "./style.module.css";
 import PalyGround from "../playGround/PalyGround";
 import Box from "../box/Box";
 import CheckProperty from "../checkProperty/CheckProperty";
 import TitleContent from "../titleContent/TitleContent";
+import {
+  ToastContext,
+  ToastContextValue,
+} from "../ToastProvider/ToastProvider";
 
 export default function PositionCenter() {
   const [isRelative, setIsRelative] = React.useState(false);
@@ -13,6 +17,7 @@ export default function PositionCenter() {
   const [isTop, setIsTop] = React.useState(false);
   const [isLeft, setIsLaft] = React.useState(false);
   const [isTransform, setIsTransform] = React.useState(false);
+  const { createToast } = useContext(ToastContext) as ToastContextValue;
   const boxStyles = {
     position: isAbsolute ? "absolute" : "",
     top: isTop ? "50%" : "",
@@ -22,6 +27,18 @@ export default function PositionCenter() {
   const playGroundStyles = {
     position: isRelative ? "relative" : "",
   } as React.CSSProperties;
+  useEffect(() => {
+    if (
+      isRelative === true &&
+      isAbsolute === true &&
+      isTop === true &&
+      isLeft === true &&
+      isTransform === true
+    ) {
+      createToast("Good job! You center a div!", "success");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAbsolute, isRelative, isTop, isLeft, isTransform]);
 
   return (
     <section className={styles.section}>

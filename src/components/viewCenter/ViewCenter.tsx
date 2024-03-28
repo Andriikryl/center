@@ -1,17 +1,22 @@
 "use client";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Container from "../container/Container";
 import styles from "./style.module.css";
 import PalyGround from "../playGround/PalyGround";
 import Box from "../box/Box";
 import CheckProperty from "../checkProperty/CheckProperty";
 import TitleContent from "../titleContent/TitleContent";
+import {
+  ToastContext,
+  ToastContextValue,
+} from "../ToastProvider/ToastProvider";
 
 export default function ViewCenter() {
   const [isRelative, setIsRelative] = React.useState(false);
   const [isAbsolute, setIsAbsolute] = React.useState(false);
   const [isInset, setIsInset] = React.useState(false);
   const [isMargin, setIsMargin] = React.useState(false);
+  const { createToast } = useContext(ToastContext) as ToastContextValue;
   const boxStyles = {
     position: isAbsolute ? "absolute" : "",
     inset: isInset ? "0px" : "",
@@ -20,6 +25,13 @@ export default function ViewCenter() {
   const playGroundStyles = {
     position: isRelative ? "relative" : "",
   } as React.CSSProperties;
+
+  useEffect(() => {
+    if (isRelative && isAbsolute && isInset && isMargin) {
+      createToast("Good job! You center a div!", "success");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAbsolute, isRelative, isInset, isMargin]);
 
   return (
     <section className={styles.section}>
