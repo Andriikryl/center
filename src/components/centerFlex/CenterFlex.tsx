@@ -10,7 +10,7 @@ import {
   ToastContextValue,
 } from "../ToastProvider/ToastProvider";
 import TitleContent from "../titleContent/TitleContent";
-import { useStickyState } from "@/hooks/useLocalStorage";
+import { useStickyState } from "@/hooks/useStickyState";
 import CodeSnep from "../codeSnep/CodeSnep";
 
 export default function CenterFlex() {
