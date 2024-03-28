@@ -10,10 +10,10 @@ import {
   ToastContextValue,
 } from "../ToastProvider/ToastProvider";
 import TitleContent from "../titleContent/TitleContent";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { useStickyState } from "@/hooks/useLocalStorage";
 
 export default function CenterFlex() {
-  const [isFlex, seIsFlex] = useLocalStorage("isFlex", false);
+  const [isFlex, seIsFlex] = useStickyState(false, "isFlex");
   const [justyCenter, setJustyCenter] = React.useState(false);
   const [isAlignCenter, setIsAlignCenter] = React.useState(false);
   const { createToast } = useContext(ToastContext) as ToastContextValue;
