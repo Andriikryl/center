@@ -9,6 +9,7 @@ import {
   ToastContext,
   ToastContextValue,
 } from "../ToastProvider/ToastProvider";
+import TitleContent from "../titleContent/TitleContent";
 
 export default function CenterFlex() {
   const [justyCenter, setJustyCenter] = React.useState(false);
@@ -28,6 +29,7 @@ export default function CenterFlex() {
     <section className={styles.section}>
       <Container>
         <div className={styles.content__box}>
+          <TitleContent>Flex</TitleContent>
           <div className={styles.control__group}>
             <CheckProperty
               label="justypy content"
