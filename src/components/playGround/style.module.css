@@ -1,5 +1,6 @@
 .wrapper{
     padding: 10px;
+    margin-inline-start: 40px;
     --size: 60px;
     --line: hsl(0 0% 0% / 0.15);
     border: 1px solid black;
@@ -15,4 +16,90 @@
       var(--size) var(--size);
       background-color: var(--pay-bg);
       display: flex;
+    }
+    
+    .container{
+  position: relative;
+}
+
+.rgaph__rows{
+  display: grid;
+  height: 300px;
+  margin-block-start: 23px;
+  position: absolute;
+  width: max-content;
+  left: 5px;
+  bottom: 70px;
+}
+
+.rgaph__columns{
+  display: grid;
+  margin-block-start: 23px;
+}
+
+.inner__Item__graph{
+  border-bottom: 2px solid var(--pay-bg);
+  margin-block-end: 20px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  & .value{
+    color: var(--pay-bg);
+    padding-block-end: 5px;
+  }
+}
+
+.inner__Item__graph::after{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 19px;
+  width: 2px;
+  height: 13px;
+  background-color: var(--pay-bg);
+}
+.inner__Item__graph::before{
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 19px;
+  width: 2px;
+  height: 13px;
+  background-color: var(--pay-bg);
+}
+
+
+.inner__ItemRows__graph{
+  border-left: 2px solid var(--pay-bg);
+  position: relative;
+  display: grid;
+  padding-inline-start: 5px;
+  place-items: center;
+  writing-mode: vertical-rl;
+  & .value{
+    color: var(--pay-bg);
+    padding-block-end: 5px;
+  }
+}
+.inner__ItemRows__graph::after{
+  content: "";
+  display: block;
+  position: absolute;
+  left: -8px;
+  top: 0;
+  width: 13px;
+  height: 2px;
+  background-color: var(--pay-bg);
+}
+.inner__ItemRows__graph::before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: -8px;
+  bottom: 0;
+  width: 13px;
+  height: 2px;
+  background-color: var(--pay-bg);
 }
