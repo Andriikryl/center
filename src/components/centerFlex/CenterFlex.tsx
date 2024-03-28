@@ -10,17 +10,21 @@ import {
   ToastContextValue,
 } from "../ToastProvider/ToastProvider";
 import TitleContent from "../titleContent/TitleContent";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 export default function CenterFlex() {
+  const [isFlex, seIsFlex] = useLocalStorage("isFlex", false);
   const [justyCenter, setJustyCenter] = React.useState(false);
   const [isAlignCenter, setIsAlignCenter] = React.useState(false);
   const { createToast } = useContext(ToastContext) as ToastContextValue;
+
   const boxStyles = {
+    display: isFlex ? "grid" : "",
     justifyContent: justyCenter ? "center" : "initial",
     alignItems: isAlignCenter ? "center" : "initial",
   };
   useEffect(() => {
-    if (justyCenter === true && isAlignCenter === true) {
+    if (justyCenter === true && isAlignCenter === true && isFlex) {
       createToast("Good job! You center a div!", "success");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -32,12 +36,17 @@ export default function CenterFlex() {
           <TitleContent>Flex</TitleContent>
           <div className={styles.control__group}>
             <CheckProperty
-              label="justypy content"
+              label="display: flex"
+              initialValue={isFlex}
+              setInitialValue={seIsFlex}
+            />
+            <CheckProperty
+              label="justypy-content: center"
               initialValue={justyCenter}
               setInitialValue={setJustyCenter}
             />
             <CheckProperty
-              label="alie items"
+              label="alie-items: center"
               initialValue={isAlignCenter}
               setInitialValue={setIsAlignCenter}
             />

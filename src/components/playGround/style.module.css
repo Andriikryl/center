@@ -15,7 +15,6 @@
       linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
       var(--size) var(--size);
       background-color: var(--pay-bg);
-      display: flex;
     }
     
     .container{
