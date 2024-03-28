@@ -10,6 +10,7 @@ import {
   ToastContext,
   ToastContextValue,
 } from "../ToastProvider/ToastProvider";
+import CodeSnep from "../codeSnep/CodeSnep";
 
 export default function ViewCenter() {
   const [isRelative, setIsRelative] = React.useState(false);
@@ -39,11 +40,14 @@ export default function ViewCenter() {
         <div className={styles.content__box}>
           <TitleContent>Position / margin</TitleContent>
           <div className={styles.control__group}>
+            <CodeSnep text=".container" codeType="open" />
             <CheckProperty
               label="position: realative;"
               initialValue={isRelative}
               setInitialValue={setIsRelative}
             />
+            <CodeSnep codeType="closed" />
+            <CodeSnep text=".box" codeType="open" />
             <CheckProperty
               label="position: absolute;"
               initialValue={isAbsolute}
@@ -59,6 +63,7 @@ export default function ViewCenter() {
               initialValue={isMargin}
               setInitialValue={setIsMargin}
             />
+            <CodeSnep codeType="closed" />
           </div>
           <PalyGround styleProp={playGroundStyles}>
             <Box motionAct={false} styleProp={boxStyles} />

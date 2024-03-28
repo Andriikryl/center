@@ -10,6 +10,7 @@ import {
   ToastContext,
   ToastContextValue,
 } from "../ToastProvider/ToastProvider";
+import CodeSnep from "../codeSnep/CodeSnep";
 
 export default function PositionCenter() {
   const [isRelative, setIsRelative] = React.useState(false);
@@ -46,11 +47,14 @@ export default function PositionCenter() {
         <div className={styles.content__box}>
           <TitleContent>Position</TitleContent>
           <div className={styles.control__group}>
+            <CodeSnep text=".container" codeType="open" />
             <CheckProperty
               label="position: realative"
               initialValue={isRelative}
               setInitialValue={setIsRelative}
             />
+            <CodeSnep codeType="closed" />
+            <CodeSnep text=".box" codeType="open" />
             <CheckProperty
               label="position: absolute"
               initialValue={isAbsolute}
@@ -71,6 +75,7 @@ export default function PositionCenter() {
               initialValue={isTransform}
               setInitialValue={setIsTransform}
             />
+            <CodeSnep codeType="closed" />
           </div>
           <PalyGround styleProp={playGroundStyles}>
             <Box motionAct={false} styleProp={boxStyles} />

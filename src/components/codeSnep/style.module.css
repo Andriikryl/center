@@ -1,5 +1,6 @@
 .code__snep{
-    display: inline-block;
+    width: max-content;
+    display: block;
     padding: 10px;
     margin-block-end: 10px;
     background-color: #9b5de5;

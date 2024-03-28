@@ -10,6 +10,7 @@ import {
   ToastContextValue,
 } from "../ToastProvider/ToastProvider";
 import TitleContent from "../titleContent/TitleContent";
+import CodeSnep from "../codeSnep/CodeSnep";
 
 export default function CenterGrid() {
   const [isGrid, setIsGrid] = React.useState(false);
@@ -31,6 +32,7 @@ export default function CenterGrid() {
         <div className={styles.content__box}>
           <TitleContent>Grid</TitleContent>
           <div className={styles.control__group}>
+            <CodeSnep text=".container" codeType="open" />
             <CheckProperty
               label="display: grid"
               initialValue={isGrid}
@@ -41,6 +43,7 @@ export default function CenterGrid() {
               initialValue={justyCenter}
               setInitialValue={setJustyCenter}
             />
+            <CodeSnep codeType="closed" />
           </div>
           <PalyGround styleProp={boxStyles}>
             <Box motionAct={true} />
