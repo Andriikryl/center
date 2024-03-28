@@ -1,0 +1,12 @@
+.title{
+    background-color: #ffff;
+    width: max-content;
+    font-family: "Roboto Mono", monospace;
+    color: #000814;
+    font-size: clamp(20px, 5vw + 1rem, 40px);
+    border-left: 4px solid #ffbe0b;
+    border-top: 2px solid #ffbe0b;
+    padding: 10px;
+    border-radius: 10px;
+    margin-block-end: 2rem;
+}

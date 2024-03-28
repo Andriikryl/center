@@ -1,0 +1,18 @@
+.wrapper{
+    padding: 10px;
+    --size: 60px;
+    --line: hsl(0 0% 0% / 0.15);
+    border: 1px solid black;
+    min-height: 300px;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        var(--line) 1px,
+        transparent 1px var(--size)
+      )
+      50% 50% / var(--size) var(--size),
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size);
+      background-color: var(--pay-bg);
+      display: flex;
+}

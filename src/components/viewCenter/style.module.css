@@ -1,0 +1,22 @@
+.section{
+    margin-block-start: 40px;
+    margin-block-end: 20px;
+}
+
+.content__box{
+    border-radius: 10px;
+    padding-block-start: 20px;
+    padding-block-end: 20px;
+    padding-inline: 20px;
+    background-color: #d62828
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control__group{
+    margin-block-end: 20px;
+}
