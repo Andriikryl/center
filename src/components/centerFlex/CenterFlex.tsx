@@ -11,11 +11,15 @@ import {
 } from "../ToastProvider/ToastProvider";
 import TitleContent from "../titleContent/TitleContent";
 import { useStickyState } from "@/hooks/useLocalStorage";
+import CodeSnep from "../codeSnep/CodeSnep";
 
 export default function CenterFlex() {
   const [isFlex, seIsFlex] = useStickyState(false, "isFlex");
-  const [justyCenter, setJustyCenter] = React.useState(false);
-  const [isAlignCenter, setIsAlignCenter] = React.useState(false);
+  const [justyCenter, setJustyCenter] = useStickyState(false, "justyCenter");
+  const [isAlignCenter, setIsAlignCenter] = useStickyState(
+    false,
+    "isAlignCenter"
+  );
   const { createToast } = useContext(ToastContext) as ToastContextValue;
 
   const boxStyles = {
@@ -28,13 +32,14 @@ export default function CenterFlex() {
       createToast("Good job! You center a div!", "success");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [justyCenter, isAlignCenter]);
+  }, [justyCenter, isAlignCenter, isFlex]);
   return (
     <section className={styles.section}>
       <Container>
         <div className={styles.content__box}>
           <TitleContent>Flex</TitleContent>
           <div className={styles.control__group}>
+            <CodeSnep text=".container" codeType="open" />
             <CheckProperty
               label="display: flex"
               initialValue={isFlex}
@@ -50,6 +55,7 @@ export default function CenterFlex() {
               initialValue={isAlignCenter}
               setInitialValue={setIsAlignCenter}
             />
+            <CodeSnep codeType="closed" />
           </div>
           <PalyGround styleProp={boxStyles}>
             <Box motionAct={true} />
