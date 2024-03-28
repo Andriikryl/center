@@ -10,32 +10,37 @@ html, body {
 
 :root {
 	--txt-1: hsl(220 10% 98%);
-	--bg-1: hsl(220 20% 10%);
-	--bg-2: hsl(220 20% 20%);
+  --pay-bg: hsl(0, 0%, 100%);
+	--bg-1: hsl(43, 100%, 51%);
+	--bg-2: hsl(209, 100%, 20%);
 	--border: hsl(180 100% 50%);
 	--pulse: hsl(9 100% 64%);
 }
-.backdrop__wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-block-start: 40px;
+
+body{
+  background-color: var(--bg-1);
 }
-.algoritms__list {
-  padding-inline-start: 0px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  & li {
-    padding-block-end: 10px;
-    border-bottom: 1px solid rgb(14, 165, 233);
-    color: var(--black, #1b1b1b);
-    font-family: Patrick Hand;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
-    padding-inline-start: 10px;
-  }
+
+body::before {
+  --size: 60px;
+  --line: hsl(0 0% 0% / 0.15);
+  content: '';
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: linear-gradient(
+        90deg,
+        var(--line) 1px,
+        transparent 1px var(--size)
+      )
+      50% 50% / var(--size) var(--size),
+    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size);
+  mask: linear-gradient(-15deg, transparent 30%, white);
+  top: 0;
+  transform-style: flat;
+  pointer-events: none;
+  z-index: -1;
 }
 
 main{
