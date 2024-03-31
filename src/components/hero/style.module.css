@@ -79,11 +79,12 @@
 }
 
 .grid__block{
+  overflow: hidden;
   grid-column: span 2 / span 2;
+  background-color: #d62828;
   border-radius: 1.5rem;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  display: grid;
+  place-items: center;
 }
 
 .flag__box{

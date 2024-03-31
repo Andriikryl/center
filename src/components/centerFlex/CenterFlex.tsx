@@ -27,6 +27,7 @@ export default function CenterFlex() {
     justifyContent: justyCenter ? "center" : "initial",
     alignItems: isAlignCenter ? "center" : "initial",
   };
+
   useEffect(() => {
     if (justyCenter === true && isAlignCenter === true && isFlex) {
       createToast("Good job! You center a div!", "success");

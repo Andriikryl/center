@@ -13,21 +13,9 @@ export default function Home() {
     <>
       <Hero />
       <CenterFlex />
-      <Container>
-        {/* <Code
-          code={`.center{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            `}
-          lang="css"
-          theme="github-dark"
-        /> */}
-        <CenterGrid />
-        <PositionCenter />
-        <ViewCenter />
-      </Container>
+      <CenterGrid />
+      <PositionCenter />
+      <ViewCenter />
     </>
   );
 }

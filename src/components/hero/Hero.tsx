@@ -13,6 +13,7 @@ import styles from "./style.module.css";
 import clsx from "clsx";
 import Container from "../container/Container";
 import Flag from "../flag/Flag";
+import RolString from "../rolString/RolString";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -43,7 +44,9 @@ export default function Hero() {
               <div className={styles.box} />
             </div>
             <div className={styles.grid__box}>
-              <div className={styles.grid__block} />
+              <div className={styles.grid__block}>
+                <RolString string="div" />
+              </div>
               <div className={styles.flag__box}>
                 <Flag />
               </div>
