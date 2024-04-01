@@ -39,7 +39,7 @@ export default function Hero() {
           >
             <div className={clsx(styles.prewu, styles.window__mask)}>
               <div className="flex__box">
-                <h1 className={styles.title}>How center a div?</h1>
+                <h1 className={styles.title}>How to center a div?</h1>
               </div>
               <div className={styles.box} />
             </div>
