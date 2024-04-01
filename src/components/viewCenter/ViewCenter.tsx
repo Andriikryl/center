@@ -38,7 +38,9 @@ export default function ViewCenter() {
     <section className={styles.section}>
       <Container>
         <div className={styles.content__box}>
-          <TitleContent>Position / margin</TitleContent>
+          <TitleContent>
+            Position / <br /> margin
+          </TitleContent>
           <div className={styles.control__group}>
             <CodeSnep text=".container" codeType="open" />
             <CheckProperty
